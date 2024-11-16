@@ -6,8 +6,9 @@ jobs:
     steps:
       - name: Run many steps
         run: |
-        pwd
-        ls
+          pwd
+          ls
+          echo "Building the project..."
   test_job:
     needs: build_job
     runs-on: ubuntu-latest
