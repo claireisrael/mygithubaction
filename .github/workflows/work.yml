@@ -1,0 +1,25 @@
+name: CI
+on: push
+jobs:
+  build_job:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Run many steps
+        run: |
+        pwd
+        ls
+  test_job:
+    needs: build_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run test
+        run: echo "Running tests..."
+  
+  deploy_job:
+    needs: [build_job, test_job]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        run: echo "Deploying to production..."
+
+
