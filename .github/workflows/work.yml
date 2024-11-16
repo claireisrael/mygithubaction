@@ -2,7 +2,7 @@ name: CI
 on: push
 jobs:
   build_job:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Run many steps
         run: |
